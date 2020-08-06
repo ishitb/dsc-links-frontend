@@ -1,0 +1,25 @@
+#navbar {
+    flex: 1;
+    background-color: var(--transclucent-light-grey);
+    display: flex;
+    padding: 0 2.5%;
+}
+
+#navbar #logo {
+    /* height: 100%; */
+    width: 15%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: var(--white);
+    cursor: pointer;
+}
+
+#navbar #logo img {
+    /* height: 100%; */
+    width: 20%;
+}
+
+#navbar #logo h3 {
+    font-size: 2rem;
+}
