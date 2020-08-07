@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useStoreActions } from 'easy-peasy';
 
 import './Auth.css';
 
 const Auth = () => {
+    const registerAction = useStoreActions(
+        (actions) => actions.accountModel.register_user
+    );
+
     const [rightPanelActive, setRightPanelActive] = useState(false);
     return (
         <div id="auth">
