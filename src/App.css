@@ -1,26 +1,28 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  --bg-1: #2B2D42;
-  --bg-2: rgb(141, 153, 174);
-  --transclucent-light-grey: rgba(141, 153, 174, 0.3);
-  --white: #EDF2F4;
-  --accent-1: #EF233C;
-  --accent-2: #D80032;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --bg-1: #2b2d42;
+    --bg-2: rgb(141, 153, 174);
+    --translucent-bg-2: rgba(141, 153, 174, 0.3);
+    --white: #edf2f4;
+    --accent-1: #ef233c;
+    --accent-2: #d80032;
 }
 
-html, body, #root {
-  height: 100%;
+html,
+body,
+#root {
+    height: 100%;
 }
 
 #app {
-  height: 100%;
-  background-color: var(--bg-1);
-  display: flex;
-  flex-direction: column;
+    height: 100%;
+    background-color: var(--bg-1);
+    display: flex;
+    flex-direction: column;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }

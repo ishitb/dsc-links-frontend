@@ -1,8 +1,11 @@
 #navbar {
-    flex: 1;
-    background-color: var(--transclucent-light-grey);
+    height: 7.5%;
+    background-color: var(--translucent-bg-2);
     display: flex;
-    padding: 0 2.5%;
+    width: 100%;
+    padding: 0 2%;
+    position: fixed;
+    z-index: 99;
 }
 
 #navbar #logo {

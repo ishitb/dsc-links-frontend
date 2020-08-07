@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from 'react';
 
 const Carousel = () => {
     const topPosts = [1, 2, 3, 4, 5];
@@ -9,7 +9,7 @@ const Carousel = () => {
         let slide_w = slider.current.clientWidth;
         let currIndex = currPost > 0 ? currPost - 1 : 4;
         slider.current.scrollTo({
-            behavior: "smooth",
+            behavior: 'smooth',
             left: slide_w * currIndex,
             top: 0,
         });
@@ -19,9 +19,8 @@ const Carousel = () => {
     const slideRight = async () => {
         let slide_w = slider.current.clientWidth;
         let currIndex = currPost < 4 ? currPost + 1 : 0;
-        // slider.current.scrollTo(slide_w * currIndex, 0);
         slider.current.scrollTo({
-            behavior: "smooth",
+            behavior: 'smooth',
             left: slide_w * currIndex,
             top: 0,
         });
@@ -38,19 +37,23 @@ const Carousel = () => {
                     <div
                         className="post"
                         key={index}
-                        style={{
-                            backgroundColor: `rgb(${post * 50}, 125, 125)`,
-                        }}
+                        style={
+                            {
+                                // backgroundColor: `rgb(${post * 50}, ${post * 20}, ${
+                                //     post * 25
+                                // })`,
+                            }
+                        }
                     >
                         {post}
                     </div>
                 ))}
             </div>
             <div className="go-left" onClick={slideLeft}>
-                <i class="fas fa-play"></i>
+                <i className="fas fa-play"></i>
             </div>
             <div className="go-right" onClick={slideRight}>
-                <i class="fas fa-play"></i>
+                <i className="fas fa-play"></i>
             </div>
         </div>
     );

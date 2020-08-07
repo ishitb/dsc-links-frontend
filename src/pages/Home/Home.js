@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import "./Home.css";
+import './Home.css';
 
-const Carousel = React.lazy(() => import("./Carousel"));
+const Carousel = React.lazy(() => import('./Carousel'));
 
 const Home = () => {
     return (
