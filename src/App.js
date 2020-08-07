@@ -13,7 +13,7 @@ function App() {
         <Suspense fallback={<div></div>}>
             <div id="app">
                 <Navbar />
-                <div id="main-page"></div>
+                <div id="main-page">
                     <Switch>
                         <Route exact path="/" component={Home} />
                         <Route exact path="/register" component={Auth} />
