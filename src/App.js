@@ -6,6 +6,7 @@ import './App.css';
 const Navbar = React.lazy(() => import('./components/Navbar/Navbar'));
 const Home = React.lazy(() => import('./pages/Home/Home'));
 const Auth = React.lazy(() => import('./pages/Authentication/Auth'));
+const Editor = React.lazy(() => import('./pages/Editor/Editor'));
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                     <Switch>
                         <Route exact path="/" component={Home} />
                         <Route exact path="/register" component={Auth} />
+                        <Route exact path="/editor" component={Editor} />
                     </Switch>
                 </div>
             </div>
