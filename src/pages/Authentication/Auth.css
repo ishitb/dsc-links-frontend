@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+#auth {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#auth h1 {
+    margin: 0;
+}
+
+#auth h2 {
+    text-align: center;
+}
+
+#auth p {
+    font-size: 1.5rem;
+    margin: 5%;
+}
+
+#auth span {
+    font-size: 1rem;
+}
+
+#auth .button {
+    border-radius: 20px;
+    border: 2px solid var(--accent-2);
+    background-color: var(--accent-2);
+    color: var(--white);
+    font-size: 1.25rem;
+    font-family: var(--button-text);
+    padding: 3% 12.5%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    cursor: pointer;
+}
+
+#auth .button:active {
+    transform: scale(0.75);
+}
+
+#auth .button:focus {
+    outline: none;
+}
+
+#auth .button.ghost {
+    background-color: transparent;
+    border-color: var(--white);
+}
+
+#auth .form {
+    height: 100%;
+    padding: 0 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+}
+
+#auth input {
+    background-color: var(--translucent-bg-2);
+    border: none;
+    padding: 5% 10%;
+    margin: 3.5% 0;
+    width: 100%;
+}
+
+#auth .container {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    position: relative;
+    overflow: hidden;
+    width: 50%;
+    max-width: 100%;
+    min-height: 60%;
+}
+
+#auth .form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+#auth .sign-in-container {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+#auth .container.right-panel-active .sign-in-container {
+    transform: translateX(100%);
+}
+
+#auth .sign-up-container {
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+#auth .container.right-panel-active .sign-up-container {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: show 0.6s;
+}
+
+@keyframes show {
+    0%,
+    49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+
+    50%,
+    100% {
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+#auth .overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+}
+
+#auth .container.right-panel-active .overlay-container {
+    transform: translateX(-100%);
+}
+
+#auth .container .overlay {
+    background: var(--accent-1);
+    background: -webkit-linear-gradient(
+        to right,
+        var(--accent-2),
+        var(--accent-1)
+    );
+    background: linear-gradient(to right, var(--accent-2), var(--accent-1));
+    color: var(--white);
+    position: relative;
+    height: 100%;
+    left: -100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+#auth .container.right-panel-active .overlay {
+    transform: translateX(50%);
+}
+
+#auth .overlay-panel {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+#auth .overlay-left {
+    transform: translateX(-20%);
+}
+
+#auth .container.right-panel-active .overlay-left {
+    transform: translateX(0);
+}
+
+#auth .overlay-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+#auth .container.right-panel-active .overlay-right {
+    transform: translateX(20%);
+}
