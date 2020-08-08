@@ -17,12 +17,15 @@
 
 #navbar #logo img {
     /* height: 100%; */
-    width: 20%;
+    width: 3rem;
     margin-right: 5%;
 }
 
 #navbar #logo h3 {
     font-size: 2rem;
+    color: var(--dark);
+    font-family: var(--heading-text);
+    font-weight: 700;
 }
 
 #navbar #nav-links {
@@ -45,6 +48,7 @@
     position: relative;
     z-index: 1;
     border: 2px solid var(--accent-2);
+    color: var(--accent-2);
 }
 
 #navbar #nav-links .nav-link#auth-button::before {
@@ -62,6 +66,7 @@
     right: 0;
     z-index: 0;
     clip-path: circle(0% at 100% 0%);
+    color: var(--bg-2);
 }
 
 #navbar #nav-links .nav-link#auth-button:hover::before {

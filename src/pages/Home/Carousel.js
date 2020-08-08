@@ -1,5 +1,7 @@
 import React, { useState, useRef } from 'react';
 
+import './Carousel.css';
+
 const Carousel = () => {
     const topPosts = [1, 2, 3, 4, 5];
     const [currPost, setCurrPost] = useState(0);
