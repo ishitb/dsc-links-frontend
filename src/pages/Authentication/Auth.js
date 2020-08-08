@@ -20,7 +20,7 @@ const Auth = () => {
     try {
       console.log('is this working ? ');
       const res = await axios.post(
-        'http://localhost:5000/api/v1/auth/login',
+        '/api/v1/auth/login',
         formData,
         {
           withCredentials: true,
@@ -33,10 +33,25 @@ const Auth = () => {
     }
   };
 
+  const logout = async () => {
+    try {
+      console.log("is this working");
+      const res = await axios.get(
+        '/api/v1/auth/logout',
+        {
+          withCredentials: true,
+        }
+      );
+    } catch (err) {
+      console.log("this is not working");
+    }
+  }
+
   const [rightPanelActive, setRightPanelActive] = useState(false);
   return (
     <div id="auth">
       <button onClick={login}>Checking if eberything works</button>
+      <button onClick={logout}>Checking if logout works</button>
       <div
         className={
           rightPanelActive ? 'container right-panel-active' : 'container'

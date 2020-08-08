@@ -42,7 +42,7 @@ export default class PrivateRoute extends Component {
   };
 
   componentWillMount = async () => {
-    if (Cookies.get('auth-token') === 'none' || Cookies.get() == null) {
+    if (Cookies.get('auth-token') === 'none' || Cookies.get('auth-token') == null) {
       this.setState({
         isAuthenticated: false,
       });
