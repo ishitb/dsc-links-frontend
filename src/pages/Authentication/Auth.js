@@ -18,13 +18,13 @@ const Auth = () => {
   const login = async () => {
     try {
       console.log('is this working ? ');
-      const res = await axios.post(
-        'http://localhost:5000/api/v1/auth/login',
-        formData,
-        {
-          withCredentials: true,
-        }
-      );
+      const res = await axios.post('/api/v1/auth/login', formData, {
+        withCredentials: true,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json',
+        },
+      });
       console.log(res);
     } catch (err) {
       console.log('this is not working');

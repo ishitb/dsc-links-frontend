@@ -11,6 +11,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     } else {
       setAuthenticated(true);
     }
+    console.log(Cookies.get('token'));
   }, []);
 
   // if (isAuthenticated) {
