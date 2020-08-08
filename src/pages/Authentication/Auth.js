@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useStoreActions } from 'easy-peasy';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 import './Auth.css';
 
@@ -25,7 +26,8 @@ const Auth = () => {
           withCredentials: true,
         }
       );
-      console.log(res);
+      console.log(res.data['token']);
+      Cookies.set('auth-token', res.data['token']);
     } catch (err) {
       console.log('this is not working');
     }
