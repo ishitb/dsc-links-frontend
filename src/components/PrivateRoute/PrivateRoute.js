@@ -33,35 +33,37 @@ import Cookies from 'js-cookie';
 import React, { Component } from 'react';
 
 export default class PrivateRoute extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  state = {
-    isAuthenticated: false,
-  };
-
-  componentWillMount = async () => {
-    if (Cookies.get('auth-token') === 'none' || Cookies.get('auth-token') == null) {
-      this.setState({
+    state = {
         isAuthenticated: false,
-      });
-    } else {
-      this.setState({
-        isAuthenticated: true,
-      });
-    }
-  };
+    };
 
-  render() {
-    // console.log(this.props);
-    // return <div></div>;
-    return this.state.isAuthenticated ? (
-      <Route {...this.props} render={(props) => <Component {...props} />} />
-    ) : (
-      <Redirect to="/register" />
-    );
-  }
+    componentWillMount = async () => {
+        if (
+            Cookies.get('auth-token') === 'none' ||
+            Cookies.get('auth-token') == null
+        ) {
+            this.setState({
+                isAuthenticated: false,
+            });
+        } else {
+            this.setState({
+                isAuthenticated: true,
+            });
+        }
+    };
+
+    render() {
+        // console.log(this.props);
+        // return <div></div>;
+        return this.state.isAuthenticated ? (
+            <Route
+                {...this.props}
+                render={(props) => <Component {...props} />}
+            />
+        ) : (
+            <Redirect to="/register" />
+        );
+    }
 }
 
 /*

@@ -9,6 +9,7 @@
     /* --bg-2: #8d99ae; */
     --bg-2: #ccc;
     --dark: #201a23;
+    --dark-2: #2e2532;
     --translucent-bg-2: rgba(141, 153, 174, 0.3);
     --white: #edf2f4;
     --accent-2: #00adb5;
@@ -31,9 +32,41 @@ body,
 }
 
 #app #main-page {
-    flex: 15;
+    /* flex: 15; */
+    height: 92.5%;
 }
 
 a {
     text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* Custom Classes */
+
+.dark-bg {
+    background-color: var(--dark);
+}
+
+.dark-bg-2 {
+    background-color: var(--dark-2);
+}
+
+.grey-bg {
+    background-color: var(--bg-1);
+}
+
+.grey-bg-2 {
+    background-color: var(--bg-2);
+}
+
+.translucent-bg {
+    background-color: var(--translucent-bg-2);
+}
+
+.heading-text {
+    font-family: var(--heading-text);
+    font-weight: 700;
 }
