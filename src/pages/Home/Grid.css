@@ -11,6 +11,17 @@
     grid-gap: 20px;
   }
 
+  h3{
+    font-family: Staatliches;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .item{
+      border-radius: 15px;
+  }
   .container > *{ 
       /* for  all the grids */
     padding: 20px;

@@ -58,3 +58,8 @@
     height: 100%;
     /* transform: translateX(-100%); */
 }
+
+#text{
+    display: flex;
+    justify-content: space-between;
+}
