@@ -23,6 +23,10 @@
 
 #navbar #logo h3 {
     font-size: 2rem;
+    font-family: Sansation;
+    /* text-transform: uppercase; */
+    color: #2B232F;
+    
 }
 
 #navbar #nav-links {
@@ -48,7 +52,7 @@
 }
 
 #navbar #nav-links .nav-link#auth-button::before {
-    content: 'LOGIN';
+    content: "LOGIN";
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,3 +72,4 @@
     background-color: var(--accent-2);
     clip-path: circle(100%);
 }
+    

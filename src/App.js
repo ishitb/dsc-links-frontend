@@ -15,7 +15,7 @@ const PrivateRoute = React.lazy(() =>
   import('./components/PrivateRoute/PrivateRoute')
 );
 
-const store = createStore(model);
+const store = createStore(model); 
 
 function App() {
   return (

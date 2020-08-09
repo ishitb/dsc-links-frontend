@@ -4,12 +4,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    --bg-1: #2b2d42;
-    --bg-2: rgb(141, 153, 174);
+    --bg-1:  #CCCCCC;
+    --bg-2: #E5E5E5;
     --translucent-bg-2: rgba(141, 153, 174, 0.3);
     --white: #edf2f4;
-    --accent-1: #ef233c;
-    --accent-2: #d80032;
+    --accent-1: #00ADB5;
+    --accent-2: #11acb4ea;
+    --row-1:#2E2532;
+    --row-2:rgba(141, 153, 174, 0.49);
+    --row-3:#5E6876;
+    --row-4:#18717A;
+    --post:rgba(105, 137, 150, 0.63);
     --button-text: 'Staatliches', cursive;
 }
 

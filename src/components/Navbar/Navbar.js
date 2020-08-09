@@ -16,6 +16,11 @@ export default function Navbar() {
                     Login
                 </NavLink>
             </div>
+            <div id="nav-links">
+                <NavLink id="auth-button" className="nav-link" to="/register">
+                    Sign Up
+                </NavLink>
+            </div>
         </div>
     );
 }
