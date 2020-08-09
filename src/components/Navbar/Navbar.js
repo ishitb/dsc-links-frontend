@@ -7,7 +7,11 @@ import './Navbar.css';
 
 export default function Navbar() {
     return (
-        <BootstrapNavbar className="grey-bg" expand="lg" id="navbar">
+        <BootstrapNavbar
+            className="grey-bg justify-content-between"
+            expand="lg"
+            id="navbar"
+        >
             <BootstrapNavbar.Brand>
                 <Link
                     className="navbar-brand heading-text d-flex align-items-center"
@@ -21,7 +25,11 @@ export default function Navbar() {
                     DSC LINKS
                 </Link>
             </BootstrapNavbar.Brand>
-            <Link id="auth-button" className="nav-link" to="/register">
+            <Link
+                id="auth-button"
+                className="nav-link anim-btn-1"
+                to="/register"
+            >
                 Login
             </Link>
         </BootstrapNavbar>

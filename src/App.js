@@ -10,6 +10,9 @@ import './App.css';
 const Navbar = React.lazy(() => import('./components/Navbar/Navbar'));
 const Home = React.lazy(() => import('./pages/Home/Home'));
 const Auth = React.lazy(() => import('./pages/Authentication/Auth'));
+const CustomAuth = React.lazy(() =>
+    import('./pages/Authentication/CustomAuth')
+);
 const Editor = React.lazy(() => import('./pages/Editor/Editor'));
 const Dashboard = React.lazy(() => import('./pages/Dashboard/Dashboard'));
 const PrivateRoute = React.lazy(() =>
@@ -32,6 +35,11 @@ function App() {
                                     exact
                                     path="/register"
                                     component={Auth}
+                                />
+                                <Route
+                                    exact
+                                    path="/reg"
+                                    component={CustomAuth}
                                 />
                                 <Route
                                     exact

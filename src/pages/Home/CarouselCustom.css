@@ -27,15 +27,58 @@
     position: absolute;
 }
 
-.carousel-indicators li {
+.carousel .carousel-indicators {
+    align-items: center;
+}
+
+.carousel .carousel-indicators li {
     width: 0.5rem;
     height: 0.5rem;
     margin: 0 1%;
     border-radius: 1000px;
     background-clip: unset;
     border: none;
+    animation: indicator-normal 0.7s forwards;
 }
 
-.carousel-indicators li.active {
+@keyframes indicator-normal {
+    0% {
+        height: 0.5rem;
+        width: 0.5rem;
+        transform: scale(1.5);
+    }
+
+    50% {
+        height: 0.2rem;
+        width: 0.9rem;
+        transform: scale(1.25);
+    }
+
+    100% {
+        height: 0.5rem;
+        width: 0.5rem;
+        transform: scale(1);
+    }
+}
+
+.carousel .carousel-indicators li.active {
     transform: scale(1.5);
+    animation: indicator-active 0.7s forwards;
+}
+
+@keyframes indicator-active {
+    0% {
+        height: 0.5rem;
+        width: 0.5rem;
+    }
+
+    50% {
+        height: 0.2rem;
+        width: 0.9rem;
+    }
+
+    100% {
+        height: 0.5rem;
+        width: 0.5rem;
+    }
 }
