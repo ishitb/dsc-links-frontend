@@ -1,26 +1,37 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Navbar as BootstrapNavbar } from 'react-bootstrap';
 
 import Logo from '../../assets/images/DSC-Logo.png';
 import './Navbar.css';
 
 export default function Navbar() {
     return (
-        <div id="navbar">
-            <Link id="logo" to="/">
-                <img src={Logo} alt="DSC Logo" />
-                <h3>DSC Links</h3>
+        <BootstrapNavbar
+            className="grey-bg justify-content-between"
+            expand="lg"
+            id="navbar"
+        >
+            <BootstrapNavbar.Brand>
+                <Link
+                    className="navbar-brand heading-text d-flex align-items-center"
+                    to="/"
+                >
+                    <img
+                        className="d-inline-block align-top"
+                        src={Logo}
+                        alt="DSC Logo"
+                    />
+                    DSC LINKS
+                </Link>
+            </BootstrapNavbar.Brand>
+            <Link
+                id="auth-button"
+                className="nav-link anim-btn-1"
+                to="/register"
+            >
+                Login
             </Link>
-            <div id="nav-links">
-                <NavLink id="auth-button" className="nav-link" to="/register">
-                    Login
-                </NavLink>
-            </div>
-            <div id="nav-links">
-                <NavLink id="auth-button" className="nav-link" to="/register">
-                    Sign Up
-                </NavLink>
-            </div>
-        </div>
+        </BootstrapNavbar>
     );
 }

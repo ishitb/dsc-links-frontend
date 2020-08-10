@@ -1,0 +1,31 @@
+@media (min-width: 1200px) {
+    #auth .container {
+        width: 60% !important;
+    }
+}
+
+#auth .container {
+    position: relative;
+}
+
+#auth .container #login-form {
+    position: absolute;
+    clip-path: circle(10% at 0% 0%);
+    transition: all 2s;
+}
+
+#auth .container #sign-up-form {
+    position: absolute;
+    clip-path: circle(10% at 100% 100%);
+    transition: all 2s;
+}
+
+#auth .container #login-form.active,
+#auth .container #sign-up-form.active {
+    clip-path: circle(100%);
+}
+
+#auth .form-group input {
+    box-shadow: none;
+    border: none;
+}
