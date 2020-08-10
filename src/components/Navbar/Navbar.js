@@ -29,6 +29,7 @@ export default function Navbar() {
                 id="auth-button"
                 className="nav-link anim-btn-1"
                 to="/register"
+                style={{ backgroundColor: 'transparent' }}
             >
                 Login
             </Link>

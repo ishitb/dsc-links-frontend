@@ -5,16 +5,19 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    /* --bg-1: #2b2d42; */
+    --bg-1-dark: #2b2d42;
     --bg-1: #e5e5e5;
-    /* --bg-2: #8d99ae; */
+    --bg-2-dark: #8d99ae;
     --bg-2: #ccc;
     --dark: #201a23;
     --dark-2: #2e2532;
     --translucent-bg-2: rgba(141, 153, 174, 0.3);
+    --grey-1: #5e6876;
+    --blue-light: #698996;
+    --blue-dark: #18717a;
     --white: #edf2f4;
     --accent-2: #00adb5;
-    --accent-1: #d80032;
+    --accent-1: #073b4c;
     --button-text: 'Staatliches', cursive;
     --heading-text: 'Nunito', sans-serif;
 }
@@ -23,6 +26,7 @@ html,
 body,
 #root {
     height: 100%;
+    background-color: var(--bg-2);
 }
 
 #app {
@@ -52,7 +56,7 @@ a:focus,
 .btn:focus {
     outline: none;
     box-shadow: none;
-    background-color: transparent !important;
+    background-color: transparent;
 }
 
 input:-webkit-autofill,
@@ -139,7 +143,7 @@ input:-webkit-autofill:active {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 10%;
+    width: 10rem;
     border-radius: 10px;
     font-size: 1.25rem;
     font-family: var(--button-text);
@@ -153,7 +157,7 @@ input:-webkit-autofill:active {
 .anim-btn-1:hover,
 .anim-btn-1:active,
 .anim-btn-1:focus {
-    background: transparent;
+    background: var(--bg-2);
     border: 2px solid var(--accent-2);
     color: var(--accent-2);
 }
