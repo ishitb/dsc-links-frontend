@@ -28,22 +28,22 @@
   }
 
   .row-1{
-      background-color: var(--row-1);
+      background-color: var(--dark-2);
       grid-row: 1/2;
   }
 
   .row-2{
-    background-color: var(--row-2);
+    background-color: var(--bg-2-dark);
     grid-row: 2/3;
 }
 
 .row-3{
-    background-color: var(--row-3);
+    background-color: var(--grey-1);
     grid-row: 3/4;
 }
 
 .row-4{
-    background-color: var(--row-4);
+    background-color: var(--blue-dark);
     grid-row: 4/5;
 }
 
