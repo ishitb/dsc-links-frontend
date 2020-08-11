@@ -19,7 +19,6 @@ const Home = () => {
     console.log(allPostsData);
   };
 
-
   useEffect(() => {
     getAllPostsFunc();
   }, []);
