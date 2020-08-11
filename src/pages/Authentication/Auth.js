@@ -21,9 +21,7 @@ const Auth = () => {
   const loggedIn = useStoreState((store) => store.accountModel.user_logged_in);
 
   const login = async () => {
-    console.log(loggedIn);
     loginAction({ email: "sa831@snu.edu.in", password: "123456" });
-    console.log(loggedIn);
   };
 
   const logout = async () => {
