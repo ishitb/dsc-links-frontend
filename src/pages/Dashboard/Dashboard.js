@@ -29,7 +29,13 @@ const Dashboard = () => {
       <div>
         Here are all the posts you have made : 
       </div>
-      
+      {
+        /*
+        
+        display all posts section
+        
+        */
+      }
     </div>
   );
 };

@@ -1,39 +1,46 @@
 import { thunk, action } from "easy-peasy";
 import axios from "axios";
-import Cookies from "js-cookie";
 
 export default {
   // STORE
-  user_logged_in: false,
-  token: null,
-  user_data: {},
+  all_posts: {},
+  posts_current_user: {},
+  create_post_data: {},
+  update_post_data: {},
 
   // THUNKS
-  login_user: thunk(async (actions, { email, password }) => {
+  get_all_posts: thunk(async (actions) => {
     try {
-      console.log("is this working ? ");
-      const res = await axios.post(
-        "/api/v1/auth/login",
-        { email: email, password: password },
-        {
-          withCredentials: true,
-        }
-      );
+      console.log("Is get all posts working .... ");
+      const res = await axios.get("/api/v1/posts", {
+        withCredentials: true,
+      });
       console.log(res);
-      await actions.setLoggedIn(res.data["token"]);
+      console.log(res.data);
+      await actions.getAllPosts(res.data);
     } catch (err) {
-      console.log("this is not working");
+      console.log("Get all posts is not working ...");
+    }
+  }),
+  get_posts_current_user: thunk(async (actions) => {
+    try {
+      console.log("Is get all posts working .... ");
+      const res = await axios.get("/api/v1/posts/me", {
+        withCredentials: true,
+      });
+      console.log(res);
+      console.log(res.data);
+      await actions.getPostsCurrentUser(res.data);
+    } catch (err) {
+      console.log("Get all posts is not working ...");
     }
   }),
 
-
   // ACTIONS
-  setLoggedIn: action(async (state, token) => {
-    Cookies.set("auth-token", token);
-    state.token = token;
-    state.user_logged_in = true;
-    console.log(state.token);
+  getAllPosts: action(async (state, allPosts) => {
+    state.all_posts = allPosts;
   }),
-
-  
+  getPostsCurrentUser: action(async (state, allPostsCurrentUser) => {
+    state.posts_current_user = allPostsCurrentUser;
+  }),
 };
