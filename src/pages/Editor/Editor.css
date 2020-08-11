@@ -1,0 +1,23 @@
+#main-page{
+    background-color: var(--bg-1-dark);
+}
+
+h3{
+    font-family: Staatliches;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 40px;
+    line-height: 50px;
+
+  }
+
+.Editor-block{
+    width: 70%;
+    height: auto;
+    margin: 5rem auto;
+    background-color: var(--bg-1);
+}
+
+.editor{
+    
+}
