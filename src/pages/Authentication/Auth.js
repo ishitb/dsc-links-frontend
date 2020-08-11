@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useStoreActions } from "easy-peasy";
+import { useStoreActions, useStoreState } from "easy-peasy";
 import axios from "axios";
 
 import "./Auth.css";
@@ -18,8 +18,12 @@ const Auth = () => {
     (actions) => actions.accountModel.logout_user
   );
 
+  const loggedIn = useStoreState((store) => store.accountModel.user_logged_in);
+
   const login = async () => {
+    console.log(loggedIn);
     loginAction({ email: "sa831@snu.edu.in", password: "123456" });
+    console.log(loggedIn);
   };
 
   const logout = async () => {
@@ -40,7 +44,7 @@ const Auth = () => {
       <button onClick={login}>Login Check Demo Button</button>
       <button onClick={register}>Register Check Demo Button</button>
       <button onClick={logout}>Logout check Button Demo</button>
-      <Link to="/dashboard"> check</Link>
+      <Link to="/dashboard"> Go to Dashboard</Link>
       <div
         className={
           rightPanelActive ? "container right-panel-active" : "container"
