@@ -21,3 +21,20 @@ h3{
 .editor{
     
 }
+
+#dropdown-row{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 5rem;
+}
+
+#dropdown-basic{
+    background-color: var( --blue-dark);
+    text-transform: uppercase;
+    font-family: Staatliches;
+    font-style: normal;
+    font-weight: 100;
+   
+   
+    
+}
