@@ -39,9 +39,9 @@ function CreatePage(props) {
       if (response) {
         // message.success("Post Created!");
 
-        setTimeout(() => {
-          props.history.push("/dashboard");
-        }, 2000);
+        // setTimeout(() => {
+        //   props.history.push("/dashboard");
+        // }, 2000);
       }
     });
   };
