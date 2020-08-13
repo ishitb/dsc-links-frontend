@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.css";
 
 import "./App.css";
 
+const CreatePost = React.lazy(() => import("./pages/Posts/CreatePost"));
 const Navbar = React.lazy(() => import("./components/Navbar/Navbar"));
 const Home = React.lazy(() => import("./pages/Home/Home"));
 const Auth = React.lazy(() => import("./pages/Authentication/Auth"));
@@ -35,6 +36,7 @@ function App() {
                 <Route exact path="/reg" component={CustomAuth} />
                 <Route exact path="/editor" component={Editor} />
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
+                <PrivateRoute exact path="/createpost" component={CreatePost} />
               </Switch>
             </div>
           </div>
