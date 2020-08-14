@@ -1,0 +1,8 @@
+#club-posts {
+    overflow-y: scroll;
+    height: 65%;
+}
+
+#club-posts .club-post {
+    height: 10rem;
+}

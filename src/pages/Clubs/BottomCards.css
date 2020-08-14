@@ -1,0 +1,14 @@
+#bottom-card {
+    height: 10%;
+}
+
+#bottom-card .lead-image {
+    clip: circle(100%);
+    border-radius: 100rem;
+    /* padding: 1rem; */
+}
+
+#bottom-card img {
+    width: 5rem !important;
+    height: 5rem;
+}
