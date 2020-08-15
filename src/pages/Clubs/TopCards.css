@@ -1,0 +1,16 @@
+#top-card {
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    animation: enter 0.8s forwards;
+}
+
+@keyframes enter {
+    from {
+        transform: translate(0, -30%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}

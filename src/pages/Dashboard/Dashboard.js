@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect } from "react";
 import { Container, Form, Row, Button } from "react-bootstrap";
 import { useStoreActions, useStoreState } from "easy-peasy";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   const getUserData = useStoreActions(
@@ -23,19 +24,19 @@ const Dashboard = () => {
     <div>
       <div>this should be a protected route</div>
       <button onClick={getLoggedInUserData}>Get Logged in User Data</button>
+      <div>Welcome {userData.name}</div>
+
       <div>
-        Welcome {userData.name}
+        Click Here to make a new post :
+        <Link to="/createpost">Go to Create Post</Link>
       </div>
-      <div>
-        Here are all the posts you have made : 
-      </div>
-      {
-        /*
+
+      <div>Here are all the posts you have made :</div>
+      {/*
         
         display all posts section
         
-        */
-      }
+        */}
     </div>
   );
 };
