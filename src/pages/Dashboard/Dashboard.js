@@ -1,44 +1,31 @@
-import React, { Fragment, useEffect } from "react";
-import { Container, Form, Row, Button } from "react-bootstrap";
-import { useStoreActions, useStoreState } from "easy-peasy";
-import { Link } from "react-router-dom";
+import React, { Fragment, useEffect } from 'react';
+import { Container, Form, Row, Button } from 'react-bootstrap';
+import { useStoreState } from 'easy-peasy';
+import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
-  const getUserData = useStoreActions(
-    (actions) => actions.accountModel.get_user_data
-  );
+    const userData = useStoreState((store) => store.accountModel.user_data);
 
-  const userData = useStoreState((store) => store.accountModel.user_data);
+    useEffect(() => {}, []);
 
-  const getLoggedInUserData = async () => {
-    console.log("is this happening");
-    await getUserData();
-    console.log(userData);
-  };
+    return (
+        <div>
+            <div>this should be a protected route</div>
+            <div>Welcome {userData.name}</div>
 
-  useEffect(() => {
-    getLoggedInUserData();
-  }, []);
+            <div>
+                Click Here to make a new post :
+                <Link to="/createpost">Go to Create Post</Link>
+            </div>
 
-  return (
-    <div>
-      <div>this should be a protected route</div>
-      <button onClick={getLoggedInUserData}>Get Logged in User Data</button>
-      <div>Welcome {userData.name}</div>
-
-      <div>
-        Click Here to make a new post :
-        <Link to="/createpost">Go to Create Post</Link>
-      </div>
-
-      <div>Here are all the posts you have made :</div>
-      {/*
+            <div>Here are all the posts you have made :</div>
+            {/*
         
         display all posts section
         
         */}
-    </div>
-  );
+        </div>
+    );
 };
 
 export default Dashboard;

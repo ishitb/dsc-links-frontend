@@ -1,70 +1,9 @@
-.container {
-    background-color: var(--bg-2);
-    width:1200px;
-    margin:30px auto;
-    margin: 30px auto;
-    border-radius: 15px;
-    
-    display: grid;
-    grid-template-rows:[societies-start] repeat(4,150px) [societies-end];
-    grid-template-columns:repeat(4, [col-start] 1fr [col-end]) 450px [post-end] ;
-    grid-gap: 20px;
-  }
-
-  h3{
-    font-family: Staatliches;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 40px;
-    line-height: 50px;
-  }
-
-  .item{
-      border-radius: 15px;
-  }
-  .container > *{ 
-      /* for  all the grids */
-    padding: 20px;
-  }
-
-  .row-1{
-      background-color: var(--dark-2);
-      grid-row: 1/2;
-  }
-
-  .row-2{
-    background-color: var(--bg-2-dark);
-    grid-row: 2/3;
+#all-clubs .club-col {
+    height: 20rem;
+    cursor: pointer;
+    transition: all 0.4s;
 }
 
-.row-3{
-    background-color: var(--grey-1);
-    grid-row: 3/4;
-}
-
-.row-4{
-    background-color: var(--blue-dark);
-    grid-row: 4/5;
-}
-
-.column-1{
-    grid-column: col-start 1/ col-end 1;
-}
-
-.column-2{
-    grid-column: col-start 2/ col-end 2;
-}
-.column-3{
-    grid-column: col-start 3/ col-end 3;
-}
-
-.column-4{
-    grid-column: col-start 4/ col-end 4;
-}
-
-.post{
-    background-color: rgba(105, 137, 150, 0.63);
-
-    grid-row: societies-start/ societies-end;
-    grid-column: col-end 4/ post-end;
+#all-clubs .club-col:hover {
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
 }
