@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import QuillEditor from "./QuillEditor";
-import {  Button, Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import axios from "axios";
 
 function CreatePage(props) {
   // const user = useSelector((state) => state.user);
-  const [heading, setHeading] = useState(""); 
+  const [heading, setHeading] = useState("");
   const [content, setContent] = useState("");
   const [files, setFiles] = useState([]);
   const [club, setClub] = useState("");
@@ -30,18 +30,19 @@ function CreatePage(props) {
 
     const variables = {
       content: content,
-      heading: "This is sample Heading",
-      club: "Sample Club 1"
+      heading: "This is sample Heading for sample post XXX",
+      club: "Sample Club 1",
       // userID: user.userData._id,
     };
 
     axios.post("/api/v1/posts", variables).then((response) => {
       if (response) {
         // message.success("Post Created!");
-
         // setTimeout(() => {
         //   props.history.push("/dashboard");
         // }, 2000);
+      }else{
+        console.log()
       }
     });
   };
@@ -58,13 +59,15 @@ function CreatePage(props) {
         onFilesChange={onFilesChange}
       />
 
-      <Form onSubmit={onSubmit}>
+      {/* <Form onSubmit={onSubmit}>
         <div style={{ textAlign: "center", margin: "2rem" }}>
           <Button size="lg" htmlType="submit" className="" onSubmit={onSubmit}>
             Submit
           </Button>
         </div>
-      </Form>
+      </Form> */}
+
+      <button onClick={onSubmit}>Submit Demo Button</button>
     </div>
   );
 }
