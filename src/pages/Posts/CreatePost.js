@@ -2,9 +2,15 @@ import React, { useEffect, useState } from "react";
 import QuillEditor from "./QuillEditor";
 import { Button, Form } from "react-bootstrap";
 import axios from "axios";
+import { useStoreActions } from "easy-peasy";
 
 function CreatePage(props) {
   // const user = useSelector((state) => state.user);
+
+  const createPost = useStoreActions(
+    (actions) => actions.postModel.create_post
+  );
+
   const [heading, setHeading] = useState("");
   const [content, setContent] = useState("");
   const [files, setFiles] = useState([]);
@@ -19,32 +25,37 @@ function CreatePage(props) {
     setFiles(files);
   };
 
-  const onSubmit = (event) => {
+  const onSubmit = async (event) => {
     event.preventDefault();
 
-    setContent("");
+    // setContent("");
 
     // if (user.userData && !user.userData.isAuth) {
     //   return alert("Please Log in first");
     // }
 
-    const variables = {
+    const postData = {
       content: content,
-      heading: "This is sample Heading for sample post XXX",
+      heading: "This BLA BLA BLABLA BLA",
       club: "Sample Club 1",
       // userID: user.userData._id,
     };
 
-    axios.post("/api/v1/posts", variables).then((response) => {
-      if (response) {
-        // message.success("Post Created!");
-        // setTimeout(() => {
-        //   props.history.push("/dashboard");
-        // }, 2000);
-      }else{
-        console.log()
-      }
-    });
+    console.log(postData);
+
+    createPost(postData);
+
+    // axios.post("/api/v1/posts", variables).then((response) => {
+    //   if (response) {
+    //     // message.success("Post Created!");
+    //     // setTimeout(() => {
+    //     //   props.history.push("/dashboard");
+    //     // }, 2000);
+
+    //   }else{
+    //     console.log()
+    //   }
+    // });
   };
 
   return (
