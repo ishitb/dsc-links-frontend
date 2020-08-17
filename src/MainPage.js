@@ -14,6 +14,7 @@ const CustomAuth = React.lazy(() =>
 );
 const Editor = React.lazy(() => import('./pages/Editor/Editor'));
 const Dashboard = React.lazy(() => import('./pages/Dashboard/Dashboard'));
+const AllPosts = React.lazy(() => import('./pages/Posts/AllPosts'));
 
 const MainPage = () => {
     const getUserData = useStoreActions(
@@ -35,6 +36,7 @@ const MainPage = () => {
                 <Route exact path="/register" component={Auth} />
                 <Route exact path="/reg" component={CustomAuth} />
                 <Route exact path="/editor" component={Editor} />
+                <Route exact path="/allposts" component={AllPosts} />
                 <Route exact path="/club/:clubId" component={ClubPage} />
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
                 <PrivateRoute exact path="/createpost" component={CreatePost} />
