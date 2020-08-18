@@ -30,6 +30,16 @@ export default {
       console.error("Get all posts is not working ...");
     }
   }),
+  get_single_post: thunk(async (actions, postId) => {
+    try {
+      const res = await axios.get("/api/v1/posts/" + postId, {
+        withCredentials: true,
+      });
+      await actions.getIndividualPost(res.data);
+    } catch (err) {
+      console.error("Get single post is not working ...");
+    }
+  }),
 
   // ACTIONS
   getAllPosts: action(async (state, allPosts) => {
