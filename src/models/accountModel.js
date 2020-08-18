@@ -19,11 +19,7 @@ export default {
                     withCredentials: true,
                 }
             );
-            console.log(res);
-            console.log(res.data.token);
-            // console.log(state.user_logged_in);
-            await actions.setLoggedIn(res.data.token);
-            // console.log(state.user_logged_in);
+            await actions.setToken(res.data.token);
         } catch (err) {
             console.log('this is not working');
         }
@@ -40,7 +36,7 @@ export default {
                 }
             );
 
-            actions.setLoggedIn(res.data['token']);
+            actions.setToken(res.data['token']);
         } catch (err) {
             console.log('this is not working');
         }
@@ -64,8 +60,6 @@ export default {
             const res = await axios.get('/api/v1/auth/me', {
                 withCredentials: true,
             });
-            console.log('data from the server of the user in question');
-            console.log(res.data['data']);
             actions.getUserData(res.data.data);
         } catch (err) {
             console.log('Getting logged in user data is not working');
@@ -73,11 +67,10 @@ export default {
     }),
 
     // ACTIONS
-    setLoggedIn: action(async (state, token) => {
+    setToken: action(async (state, token) => {
         Cookies.set('auth-token', token);
         state.token = token;
         state.user_logged_in = true;
-        console.log(state.token);
     }),
 
     setLogout: action(async (state) => {
@@ -85,11 +78,9 @@ export default {
         state.token = null;
         state.user_logged_in = false;
     }),
+
     getUserData: action(async (state, data) => {
+        state.user_logged_in = true;
         state.user_data = data;
     }),
-
-    // store_user_data: action((state, user_data) => {
-    //   state.user_data = user_data;
-    // }),
 };

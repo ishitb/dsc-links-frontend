@@ -21,8 +21,8 @@ const TopCards = ({ name, logo, links, description }) => {
                 <Col className="p-0">
                     <Row className="heading-text mb-1">{name}</Row>
                     <Row>
-                        {links.map((link) => (
-                            <Col xs={4} md={1} className="p-0">
+                        {links.map((link, index) => (
+                            <Col xs={4} md={1} key={index} className="p-0">
                                 {link}
                             </Col>
                         ))}
