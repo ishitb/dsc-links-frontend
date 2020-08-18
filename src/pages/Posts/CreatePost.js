@@ -43,19 +43,21 @@ function CreatePage(props) {
 
     console.log(postData);
 
-    createPost(postData);
+    // createPost(postData);
 
-    // axios.post("/api/v1/posts", variables).then((response) => {
-    //   if (response) {
-    //     // message.success("Post Created!");
-    //     // setTimeout(() => {
-    //     //   props.history.push("/dashboard");
-    //     // }, 2000);
+    axios.post("/api/v1/posts", postData, {
+      withCredentials: true
+    }).then((response) => {
+      if (response) {
+        // message.success("Post Created!");
+        // setTimeout(() => {
+        //   props.history.push("/dashboard");
+        // }, 2000);
 
-    //   }else{
-    //     console.log()
-    //   }
-    // });
+      }else{
+        console.log()
+      }
+    });
   };
 
   return (

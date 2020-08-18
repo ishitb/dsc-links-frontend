@@ -4,6 +4,7 @@ import axios from "axios";
 export default {
   // STORE
   all_posts: {},
+  individual_post: {},
   posts_current_user: {},
   // create_post_data: {},
   update_post_data: {},
@@ -29,30 +30,6 @@ export default {
       console.error("Get all posts is not working ...");
     }
   }),
-  create_post: thunk(async ({ content, heading, club }) => {
-    try {
-      // const res =
-
-      //      console.log(postData);
-
-      const res = await axios.post(
-        "api/v1/posts",
-        {
-          heading: heading,
-          club: club,
-          content: content,
-        },
-        {
-          withCredentials: true,
-        }
-      );
-
-      console.log(res);
-      //await actions.createPost()
-    } catch (err) {
-      console.error("Create Post is not working ...");
-    }
-  }),
 
   // ACTIONS
   getAllPosts: action(async (state, allPosts) => {
@@ -61,5 +38,38 @@ export default {
   getPostsCurrentUser: action(async (state, allPostsCurrentUser) => {
     state.posts_current_user = allPostsCurrentUser;
   }),
+  getIndividualPost: action(async (state, singlePost) => {
+    state.individual_post = singlePost;
+  }),
   //   createPost: action(async (state) => {}),
 };
+
+/*
+
+// create_post: thunk(async ({ content, heading, club }) => {
+  //   try {
+  //     // const res =
+
+  //     //      console.log(postData);
+
+  //     const res = await axios.post(
+  //       "api/v1/posts",
+  //       {
+  //         heading: heading,
+  //         club: club,
+  //         content: content,
+  //       },
+  //       {
+  //         withCredentials: true,
+  //       }
+  //     );
+
+  //     console.log(res);
+  //     //await actions.createPost()
+  //   } catch (err) {
+  //     console.error("Create Post is not working ...");
+  //   }
+  // }),
+
+
+*/
