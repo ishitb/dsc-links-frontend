@@ -1,0 +1,38 @@
+.container {
+    background-color: var(--bg-2);
+    width:1200px;
+    margin:30px auto;
+    margin: 30px auto;
+    border-radius: 15px;
+    
+    display: grid;
+    grid-template-rows:[societies-start] repeat(4,250px) [societies-end];
+   
+    /* incase recent posts are to be added later
+     grid-template-columns:repeat(4, [col-start] 1fr [col-end]) 450px [post-end] ; */
+
+     /* grid-template-columns:repeat(4, [col-start] 1fr [col-end]); */
+    grid-gap: 20px;
+  }
+
+  h3{
+    font-family: Staatliches;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .item{
+      border-radius: 10px;
+      background-color: var(--blue-light);
+  }
+  .container > *{ 
+      /* for  all the grids */
+    padding: 20px;
+  }
+
+  .buttons{
+      display: flex;
+      
+  }

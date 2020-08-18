@@ -1,7 +1,11 @@
 import React, { Fragment, useEffect } from "react";
-import { Container, Form, Row, Button } from "react-bootstrap";
+import { Container, Form, Row, Button, Col } from "react-bootstrap";
 import { useStoreActions, useStoreState } from "easy-peasy";
 import { Link } from "react-router-dom";
+import PostGrid from "./PostGrids";
+
+import Card from "./CardUI";
+
 
 const Dashboard = () => {
   const getUserData = useStoreActions(
@@ -24,19 +28,24 @@ const Dashboard = () => {
     <div>
       <div>this should be a protected route</div>
       <button onClick={getLoggedInUserData}>Get Logged in User Data</button>
-      <div>Welcome {userData.name}</div>
+      <div>
+      <h3>Welcome, {userData.name}!</h3>
+      </div>
 
       <div>
-        Click Here to make a new post :
-        <Link to="/createpost">Go to Create Post</Link>
+        <h4>
+        Want to post something? 
+        <Link to="/createpost">
+        <Button variant="dark">Go to Create Post &rarr;</Button>
+       </Link>
+        </h4>
       </div>
 
       <div>Here are all the posts you have made :</div>
-      {/*
-        
-        display all posts section
-        
-        */}
+     {/* adding this card section 
+     <Card></Card>
+      */}
+     <PostGrid></PostGrid>
     </div>
   );
 };
