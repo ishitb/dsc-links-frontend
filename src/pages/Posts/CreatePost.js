@@ -2,7 +2,11 @@ import React, { useEffect, useState } from "react";
 import QuillEditor from "./QuillEditor";
 import { Button, Form } from "react-bootstrap";
 import axios from "axios";
-import { useStoreActions } from "easy-peasy";
+import {Dropdown, DropdownButton} from "react-bootstrap";
+import DropdownItem from 'react-bootstrap/esm/DropdownItem';
+import "./CreatePost.css";
+import { useStoreActions, useStoreState } from "easy-peasy";
+
 
 function CreatePage(props) {
   // const user = useSelector((state) => state.user);
@@ -15,6 +19,18 @@ function CreatePage(props) {
   const [content, setContent] = useState("");
   const [files, setFiles] = useState([]);
   const [club, setClub] = useState("");
+
+  const getUserData = useStoreActions(
+    (actions) => actions.accountModel.get_user_data
+  );
+  
+  const userData = useStoreState((store) => store.accountModel.user_data);
+  
+  const getLoggedInUserData = async () => {
+    console.log("is this happening");
+    await getUserData();
+    console.log(userData);
+  };
 
   const onEditorChange = (value) => {
     setContent(value);
@@ -61,16 +77,30 @@ function CreatePage(props) {
   };
 
   return (
-    <div style={{ maxWidth: "700px", margin: "2rem auto" }}>
+    
       <div style={{ textAlign: "center" }}>
-        <h2> Create a new post</h2>
-      </div>
-
-      <QuillEditor
+      <div className="Editor-block">
+      <div id="dropdown-row">
+           <Dropdown drop="right">
+            <Dropdown.Toggle id="dropdown-basic" size="lg" onClick={getLoggedInUserData} >Club Name</Dropdown.Toggle>
+            <Dropdown.Menu>
+                <DropdownItem>DSC</DropdownItem>
+                <DropdownItem>TEDx</DropdownItem>
+                <DropdownItem>ECELL</DropdownItem>
+            </Dropdown.Menu>
+            </Dropdown>
+           </div>
+        <h3> Create a new post</h3>
+        
+        <div className="editor">
+        <QuillEditor 
         placeholder={"Start Posting Something"}
         onEditorChange={onEditorChange}
         onFilesChange={onFilesChange}
       />
+        </div>
+      </div>
+
 
       {/* <Form onSubmit={onSubmit}>
         <div style={{ textAlign: "center", margin: "2rem" }}>

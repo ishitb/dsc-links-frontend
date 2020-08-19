@@ -1,31 +1,53 @@
-import React, { Fragment, useEffect } from 'react';
-import { Container, Form, Row, Button } from 'react-bootstrap';
-import { useStoreState } from 'easy-peasy';
-import { Link } from 'react-router-dom';
+import React, { Fragment, useEffect } from "react";
+import { Container, Form, Row, Button, Col } from "react-bootstrap";
+import { useStoreActions, useStoreState } from "easy-peasy";
+import { Link } from "react-router-dom";
+import PostGrid from "./PostGrids";
+
+import Card from "./CardUI";
+
 
 const Dashboard = () => {
-    const userData = useStoreState((store) => store.accountModel.user_data);
+  const getUserData = useStoreActions(
+    (actions) => actions.accountModel.get_user_data
+  );
 
-    useEffect(() => {}, []);
+  const userData = useStoreState((store) => store.accountModel.user_data);
 
-    return (
-        <div>
-            <div>this should be a protected route</div>
-            <div>Welcome {userData.name}</div>
+  const getLoggedInUserData = async () => {
+    console.log("is this happening");
+    await getUserData();
+    console.log(userData);
+  };
 
-            <div>
-                Click Here to make a new post :
-                <Link to="/createpost">Go to Create Post</Link>
-            </div>
+  useEffect(() => {
+    getLoggedInUserData();
+  }, []);
 
-            <div>Here are all the posts you have made :</div>
-            {/*
-        
-        display all posts section
-        
-        */}
-        </div>
-    );
+  return (
+    <div>
+      <div>this should be a protected route</div>
+      <button onClick={getLoggedInUserData}>Get Logged in User Data</button>
+      <div>
+      <h3>Welcome, {userData.name}!</h3>
+      </div>
+
+      <div>
+        <h4>
+        Want to post something? 
+        <Link to="/createpost">
+        <Button variant="dark">Go to Create Post &rarr;</Button>
+       </Link>
+        </h4>
+      </div>
+
+      <div>Here are all the posts you have made :</div>
+     {/* adding this card section 
+     <Card></Card>
+      */}
+     <PostGrid></PostGrid>
+    </div>
+  );
 };
 
 export default Dashboard;
