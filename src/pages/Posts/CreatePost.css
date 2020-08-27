@@ -1,40 +1,29 @@
-#main-page{
-    background-color: var(--bg-1-dark);
-}
-
-h3{
+.heading-text-2 {
     font-family: Staatliches;
     font-style: normal;
     font-weight: 100;
     font-size: 40px;
     line-height: 50px;
+}
 
-  }
+#title-input,
+#title-input:focus,
+#title-input:active {
+    border: 1px solid #ced4da;
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+}
 
-.Editor-block{
+.Editor-block {
     width: 70%;
     height: auto;
     margin: 5rem auto;
     background-color: var(--bg-1);
+    border: 3px solid var(--accent-2);
 }
 
-.editor{
-    /* height: 30vh; */
-}
-
-#dropdown-row{
-    display: flex;
-    justify-content: flex-start;
-    /* margin-bottom: 5rem;  */
-}
-
-#dropdown-basic{
-    background-color: var( --blue-dark);
-    text-transform: uppercase;
-    font-family: Staatliches;
-    font-style: normal;
-    font-weight: 100;
-   
-   
-    
+.quill p {
+    height: 40vh;
+    font-size: 1rem;
 }

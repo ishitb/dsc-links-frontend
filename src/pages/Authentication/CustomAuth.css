@@ -1,3 +1,9 @@
+#auth {
+    background: url('../../assets/images/login-bg.png') repeat-x left;
+    background-size: 34%;
+    background-color: black;
+}
+
 @media (min-width: 1200px) {
     #auth .container {
         width: 60% !important;
@@ -19,6 +25,7 @@
     clip-path: circle(0% at 0% 0%);
     /* transition: all 1.2s cubic-bezier(0.12, 0.98, 0.75, -0.38); */
     z-index: 1;
+    border: 2px solid var(--accent-2);
 }
 
 #auth .container #sign-up-form {
@@ -26,6 +33,7 @@
     clip-path: circle(0% at 100% 100%);
     /* transition: all 1.2s cubic-bezier(0.31, -0.76, 0.58, 1); */
     z-index: 1;
+    border: 2px solid var(--accent-2);
 }
 
 #auth .container #login-form.active,
@@ -38,6 +46,10 @@
 #auth .form-group input {
     box-shadow: none;
     border: none;
+}
+
+#sign-up-form .anim-btn-1 {
+    outline: none;
 }
 
 #sign-up-form .anim-btn-1::before {

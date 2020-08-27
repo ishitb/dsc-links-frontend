@@ -8,7 +8,7 @@
     --bg-1-dark: #2b2d42;
     --bg-1: #e5e5e5;
     --bg-2-dark: #8d99ae;
-    --bg-2: #ccc;
+    --bg-2: #262324;
     --dark: #201a23;
     --dark-2: #2e2532;
     --translucent-bg-2: rgba(141, 153, 174, 0.3);
@@ -16,7 +16,7 @@
     --blue-light: #698996;
     --blue-dark: #18717a;
     --white: #edf2f4;
-    --accent-2: #00adb5;
+    --accent-2: #f7941d;
     --accent-1: #073b4c;
     --button-text: 'Staatliches', cursive;
     --heading-text: 'Nunito', sans-serif;
@@ -170,7 +170,7 @@ input:-webkit-autofill:active {
 .anim-btn-1:hover,
 .anim-btn-1:active,
 .anim-btn-1:focus {
-    background: var(--bg-2);
+    background: var(--bg-1);
     border: 2px solid var(--accent-2);
     color: var(--accent-2);
 }
@@ -190,7 +190,7 @@ input:-webkit-autofill:active {
     right: 0;
     z-index: 0;
     clip-path: circle(0% at 100% 0%);
-    color: var(--bg-2);
+    color: var(--bg-1);
 }
 
 .anim-btn-1:hover::before {

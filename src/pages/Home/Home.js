@@ -24,7 +24,7 @@ const Home = () => {
     return (
         <div id="home" className="pb-2">
             <Carousel />
-            <h3 className="heading-text">SOCIETIES</h3>
+            <h3 className="heading-text grey-fg mt-3">SOCIETIES</h3>
             <Grid />
         </div>
     );

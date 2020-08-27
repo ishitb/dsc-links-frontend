@@ -1,10 +1,25 @@
-import React, { lazy } from 'react';
+import React, { lazy, useState } from 'react';
 import { Container, Form, Row, Col, Button } from 'react-bootstrap';
+import { useStoreActions, useStoreState } from 'easy-peasy';
+import { Redirect } from 'react-router-dom';
 
 const Divider = lazy(() => import('../../components/Divider/Divider'));
 
 const Login = ({ signUpActive, setSignUpActive }) => {
-    return (
+    const [loggedIn, setLoggedIn] = useState(false);
+
+    const loginAction = useStoreActions(
+        (actions) => actions.accountModel.login_user
+    );
+
+    const login = async () => {
+        loginAction({ email: 'sa831@snu.edu.in', password: '123456' });
+        setLoggedIn(true);
+    };
+
+    return loggedIn ? (
+        <Redirect to="/dashboard" />
+    ) : (
         <Container
             id="login-form"
             className={`dark-bg-2 h-100 d-flex flex-column justify-content-around align-items-center border-radius-15 ${
@@ -33,9 +48,11 @@ const Login = ({ signUpActive, setSignUpActive }) => {
                 </Col>
             </Row>
             <Row className="w-25">
-                <Button className="anim-btn-1 dark-bg-2 w-100">LOGIN</Button>
+                <Button className="anim-btn-1 dark-bg-2 w-100" onClick={login}>
+                    LOGIN
+                </Button>
             </Row>
-            <Row className="grey-fg-2 w-100 d-flex justify-content-center">
+            <Row className="grey-fg w-100 d-flex justify-content-center">
                 <Divider />
                 Don't Have an Account?{' '}
                 <span

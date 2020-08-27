@@ -40,7 +40,7 @@ const SignUp = ({ signUpActive, setSignUpActive }) => {
             <Row className="w-25">
                 <Button className="anim-btn-1 white-bg w-100">SIGN UP</Button>
             </Row>
-            <Row className="grey-fg-2 w-100 d-flex justify-content-center">
+            <Row className="grey-fg w-100 d-flex justify-content-center">
                 <Divider />
                 Already have an Account?{' '}
                 <span
