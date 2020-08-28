@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { useStoreState, useStore } from 'easy-peasy';
+import { useStoreState } from 'easy-peasy';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
     const loggedIn = useStoreState((store) => store.accountModel.user_logged_in);
