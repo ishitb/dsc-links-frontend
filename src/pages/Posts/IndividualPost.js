@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useStoreState, useStoreActions } from 'easy-peasy';
 import { Card } from 'react-bootstrap';
@@ -19,6 +19,8 @@ const IndividualPost = () => {
 
     useEffect(() => {
         getPostDetails(postId);
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return post.data ? (
