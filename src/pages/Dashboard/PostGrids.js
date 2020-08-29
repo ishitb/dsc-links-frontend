@@ -19,8 +19,22 @@ export default function PostGrid() {
                         className="buttons d-flex justify-content-around"
                         fluid
                     >
-                        <Button variant="info">Go to post &rarr;</Button>
-                        <Button variant="danger">Delete &#10060;</Button>
+                        <Button variant="info">
+                            Go to post{' '}
+                            <i
+                                class="fas fa-arrow-right"
+                                role="img"
+                                aria-label="icon"
+                            ></i>
+                        </Button>
+                        <Button variant="danger">
+                            Delete{' '}
+                            <i
+                                class="fas fa-times"
+                                role="img"
+                                aria-label="icon"
+                            ></i>
+                        </Button>
                     </Container>
                 </div>
             </div>

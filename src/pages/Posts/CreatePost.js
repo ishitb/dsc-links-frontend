@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useRef } from 'react';
 import QuillEditor from './QuillEditor';
 import { Button, FormControl } from 'react-bootstrap';
 import axios from 'axios';
@@ -6,6 +6,8 @@ import './CreatePost.css';
 // import { useStoreActions, useStoreState } from 'easy-peasy';
 
 function CreatePage() {
+    const titleRef = useRef();
+
     // const user = useSelector((state) => state.user);
 
     // const createPost = useStoreActions(
@@ -34,8 +36,9 @@ function CreatePage() {
         console.log(content);
     };
 
-    const onFilesChange = (files) => {
-        setFiles(files);
+    const onFilesChange = (input_files) => {
+        setFiles(input_files);
+        console.log(files);
     };
 
     const onSubmit = async (event) => {
@@ -74,6 +77,10 @@ function CreatePage() {
             });
     };
 
+    const make_title_uppercase = () => {
+        titleRef.current.value = titleRef.current.value.toUpperCase();
+    };
+
     return (
         <div
             id="new-post"
@@ -84,6 +91,8 @@ function CreatePage() {
                 placeholder="Title"
                 id="title-input"
                 className="w-50 heading-text accent-2-fg mb-n4"
+                ref={titleRef}
+                onChange={() => make_title_uppercase()}
             />
             <div className="Editor-block border-radius-15">
                 <div className="editor">

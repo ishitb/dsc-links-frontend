@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useStoreActions, useStoreState } from 'easy-peasy';
-import { Container, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 import './Grid.css';
 
@@ -21,6 +21,8 @@ const Grid = () => {
 
     useEffect(() => {
         retrieveClubsList();
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

@@ -1,5 +1,5 @@
 import React, { useState, lazy } from 'react';
-import { Container, Form, Row, Col, Button } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 import './CustomAuth.css';
 

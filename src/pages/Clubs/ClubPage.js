@@ -24,6 +24,8 @@ const ClubPage = () => {
 
     useEffect(() => {
         getClubDetails();
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return clubDetails.data ? (

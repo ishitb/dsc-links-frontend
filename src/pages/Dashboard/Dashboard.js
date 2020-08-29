@@ -1,5 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
-import { Container, Form, Row, Button, Col } from 'react-bootstrap';
+import React, { useEffect } from 'react';
 import { useStoreActions, useStoreState } from 'easy-peasy';
 import { Link } from 'react-router-dom';
 import PostGrid from './PostGrids';
@@ -23,6 +22,8 @@ const Dashboard = () => {
 
     useEffect(() => {
         getLoggedInUserData();
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

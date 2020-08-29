@@ -1,6 +1,6 @@
 import React, { lazy, useState } from 'react';
 import { Container, Form, Row, Col, Button } from 'react-bootstrap';
-import { useStoreActions, useStoreState } from 'easy-peasy';
+import { useStoreActions } from 'easy-peasy';
 import { Redirect } from 'react-router-dom';
 
 const Divider = lazy(() => import('../../components/Divider/Divider'));

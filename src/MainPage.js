@@ -12,7 +12,6 @@ const Auth = React.lazy(() => import('./pages/Authentication/Auth'));
 const CustomAuth = React.lazy(() =>
     import('./pages/Authentication/CustomAuth')
 );
-const Editor = React.lazy(() => import('./pages/Editor/Editor'));
 const Dashboard = React.lazy(() => import('./pages/Dashboard/Dashboard'));
 const AllPosts = React.lazy(() => import('./pages/Posts/AllPosts'));
 const IndividualPost = React.lazy(() => import('./pages/Posts/IndividualPost'));
@@ -28,6 +27,8 @@ const MainPage = () => {
 
     useEffect(() => {
         getLoggedInUserData();
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
@@ -36,7 +37,6 @@ const MainPage = () => {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/reg" component={Auth} />
                 <Route exact path="/register" component={CustomAuth} />
-                <Route exact path="/editor" component={Editor} />
                 <Route exact path="/posts" component={AllPosts} />
                 <Route exact path="/posts/:postId" component={IndividualPost} />
                 <Route exact path="/club/:clubId" component={ClubPage} />

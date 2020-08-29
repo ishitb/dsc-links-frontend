@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import 'react-bootstrap/Button';
-import { useStoreState, useStoreActions } from 'easy-peasy';
+import { useStoreActions } from 'easy-peasy';
 import './Home.css';
 
 const Carousel = React.lazy(() => import('./Carousel'));
@@ -11,14 +11,14 @@ const Home = () => {
         (actions) => actions.postModel.get_all_posts
     );
 
-    const allPostsData = useStoreState((store) => store.postModel.all_posts);
-
     const getAllPostsFunc = async () => {
         await getAllPosts();
     };
 
     useEffect(() => {
         getAllPostsFunc();
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

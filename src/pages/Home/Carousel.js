@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { default as BootstrapCarousel } from 'react-bootstrap/Carousel';
 
 import './CarouselCustom.css';
 
-import orange_bg from '../../assets/images/orange-bg.png';
-
 const Carousel = () => {
     const topPosts = [1, 2, 3, 4, 5];
 
-    const [index, setIndex] = useState(0);
+    // const [index, setIndex] = useState(0);
 
     return (
         <div id="carousel">

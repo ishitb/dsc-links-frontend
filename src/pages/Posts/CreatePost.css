@@ -6,13 +6,16 @@
     line-height: 50px;
 }
 
-#title-input,
-#title-input:focus,
-#title-input:active {
+#title-input {
     border: 1px solid #ced4da;
     outline: none;
     box-shadow: none;
     background-color: transparent;
+}
+
+#title-input:focus,
+#title-input:active {
+    border: 1px solid var(--accent-2);
 }
 
 .Editor-block {
@@ -23,7 +26,25 @@
     border: 3px solid var(--accent-2);
 }
 
-.quill p {
+.quill {
     height: 40vh;
+}
+
+.quill p {
     font-size: 1rem;
+}
+
+.editor,
+.editor > div {
+    border-radius: 15px;
+}
+
+#toolbar {
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.ql-container {
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
 }

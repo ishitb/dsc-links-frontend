@@ -1,5 +1,5 @@
 import React, { lazy } from 'react';
-import { Container, Form, Row, Col, Button } from 'react-bootstrap';
+import { Container, Form, Row, Button } from 'react-bootstrap';
 
 const Divider = lazy(() => import('../../components/Divider/Divider'));
 
