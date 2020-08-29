@@ -52,7 +52,7 @@ function CreatePage() {
 
         const postData = {
             content: content,
-            heading: 'This BLA BLA BLABLA BLA',
+            heading: 'sample heading test one',
             club: 'Sample Club 1',
             // userID: user.userData._id,
         };

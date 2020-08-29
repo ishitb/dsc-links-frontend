@@ -7,9 +7,9 @@ const Carousel = React.lazy(() => import('./Carousel'));
 const Grid = React.lazy(() => import('./Grid'));
 
 const Home = () => {
-    const getAllPosts = useStoreActions(
-        (actions) => actions.postModel.get_all_posts
-    );
+    // const getAllPosts = useStoreActions(
+    //     (actions) => actions.postModel.get_all_posts
+    // );
 
     const getAllPostsFunc = async () => {
         await getAllPosts();

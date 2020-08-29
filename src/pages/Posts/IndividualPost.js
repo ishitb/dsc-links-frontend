@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Fragment } from 'react';
 import { useParams } from 'react-router-dom';
 import { useStoreState, useStoreActions } from 'easy-peasy';
+import { Card } from 'react-bootstrap';
+import parse from 'html-react-parser';
 
 const IndividualPost = () => {
     let { postId } = useParams();
 
-    const postDetails = useStoreState(
-        (store) => store.postModel.individual_post
-    );
+    const post = useStoreState((store) => store.postModel.individual_post);
 
     const get_single_post = useStoreActions(
         (actions) => actions.postModel.get_single_post
@@ -18,16 +18,20 @@ const IndividualPost = () => {
     };
 
     useEffect(() => {
-        getPostDetails();
-
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+        getPostDetails(postId);
     }, []);
 
-    return postDetails.data ? (
+    return post.data ? (
         <div>
-            Post heading : {postDetails.data.heading}
-            Content for the post is
-            {postDetails.data.content}
+            <Card style={{ width: '18rem' }}>
+                <Card.Body>
+                    <Card.Title>{post.data.heading}</Card.Title>
+                    <Card.Text>{post.data.content}</Card.Text>
+                </Card.Body>
+            </Card>
+            <div className="bg-white">{parse(post.data.content)}</div>
+
+            {/* {post.data.content} */}
         </div>
     ) : (
         <h4>Loading...</h4>
