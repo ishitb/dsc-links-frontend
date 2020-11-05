@@ -22,6 +22,10 @@
     --heading-text: 'Nunito', sans-serif;
 }
 
+/* :root {
+    filter: invert(1) hue-rotate(180deg);
+} */
+
 html,
 body,
 #root {

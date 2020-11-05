@@ -1,7 +1,8 @@
 #auth {
-    background: url('../../assets/images/login-bg.png') repeat-x left;
+    /* background: url('../../assets/images/login-bg.png') repeat-x left;
     background-size: 34%;
-    background-color: black;
+    background-color: black; */
+    background-color: transparent;
 }
 
 @media (min-width: 1200px) {

@@ -5,6 +5,9 @@ import { useStoreActions } from 'easy-peasy';
 const PrivateRoute = React.lazy(() =>
     import('./components/PrivateRoute/PrivateRoute')
 );
+const ParticlesComponent = React.lazy(() =>
+    import('./components/ParticlesComponent/ParticlesComponent')
+);
 const CreatePost = React.lazy(() => import('./pages/Posts/CreatePost'));
 const ClubPage = React.lazy(() => import('./pages/Clubs/ClubPage'));
 const Home = React.lazy(() => import('./pages/Home/Home'));
@@ -36,7 +39,16 @@ const MainPage = () => {
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/reg" component={Auth} />
-                <Route exact path="/register" component={CustomAuth} />
+                <Route
+                    exact
+                    path="/register"
+                    render={(props) => (
+                        <ParticlesComponent
+                            props={props}
+                            component={CustomAuth}
+                        />
+                    )}
+                />
                 <Route exact path="/posts" component={AllPosts} />
                 <Route exact path="/posts/:postId" component={IndividualPost} />
                 <Route exact path="/club/:clubId" component={ClubPage} />
