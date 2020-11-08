@@ -1,45 +1,54 @@
-import React from 'react';
-import { default as BootstrapCarousel } from 'react-bootstrap/Carousel';
+import React, { useCallback, useEffect } from 'react';
+import { useStoreActions, useStoreState } from 'easy-peasy';
+import { Carousel } from 'react-bootstrap';
 
-import './CarouselCustom.css';
+const CarouselComponent = () => {
+  const getAllPosts = useStoreActions(
+    (actions) => actions.postModel.get_all_posts
+  );
 
-const Carousel = () => {
-    const topPosts = [1, 2, 3, 4, 5];
+  const getAllPostsFunc = async () => {
+    await getAllPosts();
+  };
 
-    // const [index, setIndex] = useState(0);
+  useEffect(() => {
+    getAllPostsFunc();
+  }, []);
 
-    return (
-        <div id="carousel">
-            <BootstrapCarousel
-            // activeIndex={index}
-            // onSlide={(index) => setIndex(index)}
-            >
-                {topPosts.map((post, index) => (
-                    <BootstrapCarousel.Item
-                        key={index}
-                        className="d-flex justify-content-center align-content-center"
-                    >
-                        {/* <img
-                            style={{
-                                width: '100%',
-                                height: '100%',
-                                position: 'absolute',
-                                zIndex: '0',
-                            }}
-                            src={orange_bg}
-                            alt="placeholder"
-                        /> */}
-                        {/* <p
-                            className="heading-text dark-fg"
-                            style={{ zIndex: '5' }}
-                        >
-                            {post}
-                        </p> */}
-                    </BootstrapCarousel.Item>
-                ))}
-            </BootstrapCarousel>
-        </div>
-    );
+  const allPosts = useStoreState((store) => store.postModel.all_posts);
+
+  return (
+    <div className="my-4">
+      {allPosts != null && allPosts.data != undefined ? (
+        <Carousel>
+          {allPosts.data.map((d) => (
+            <Carousel.Item key={d._id} interval={3000}>
+              <img
+                style={{
+                  height: '500px',
+                  width: '95vw',
+                  objectFit: 'cover',
+                }}
+                className="d-block w-100"
+                src={
+                  d.photo !== 'none.jpg'
+                    ? d.photo
+                    : 'https://source.unsplash.com/random/800x500'
+                }
+                alt={d.heading}
+                title={d.heading}
+              />
+              <Carousel.Caption>
+                <h3>{d.heading}</h3>
+              </Carousel.Caption>
+            </Carousel.Item>
+          ))}
+        </Carousel>
+      ) : (
+        <div style={{ color: 'white' }}>Loading ...</div>
+      )}
+    </div>
+  );
 };
 
-export default Carousel;
+export default CarouselComponent;
