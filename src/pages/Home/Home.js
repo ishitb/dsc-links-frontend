@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import 'react-bootstrap/Button';
 import { useStoreActions, useStoreState } from 'easy-peasy';
+import 'react-bootstrap/Button';
 import './Home.css';
 
 const Carousel = React.lazy(() => import('./Carousel'));
@@ -22,8 +22,6 @@ const Home = () => {
   }, []);
 
   const allPosts = useStoreState((store) => store.postModel.all_posts);
-
-  console.log(allPosts);
 
   return (
     <div id="home" className="pb-2">
