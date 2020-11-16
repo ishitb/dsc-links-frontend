@@ -4,6 +4,7 @@ import { Navbar as BootstrapNavbar } from "react-bootstrap";
 import { useStoreState, useStoreActions } from "easy-peasy";
 import Logo from "../../assets/images/DSC-Logo.png";
 import "./Navbar.css";
+import SearchPage from "./Searchbar.jsx";
 
 export default function Navbar() {
   const loggedIn = useStoreState((store) => store.accountModel.user_logged_in);
@@ -56,6 +57,7 @@ export default function Navbar() {
           <button onClick={logout}>LOGOUT</button>
         </Fragment>
       )}
+      <SearchPage></SearchPage> 
     </BootstrapNavbar>
   );
 }
